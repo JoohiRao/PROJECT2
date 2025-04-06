@@ -2,6 +2,8 @@ const express=require("express")
 const dotenv=require("dotenv")
 const cors=require("cors")
 const connectDB=require("./config/db")
+const authRoutes = require("./routes/authRoutes");
+
 const http=require("http")
 const socketio=require("socket.io")
 const app=express()
@@ -20,11 +22,11 @@ const io=socketio(server,{
     }
 })
 
-
+app.use("/api/auth", authRoutes);
 app.get("/",(req,res)=>{
     res.send("hey")
 })
-const port=process.env.PORT || 3000
+const port=process.env.PORT || 5000
 server.listen(port,()=>{
     console.log(`server is running on ${port}`)
 })

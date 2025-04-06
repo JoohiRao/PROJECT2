@@ -1,12 +1,12 @@
 import React from 'react';
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
 
 function App() {
   return (
     <div>
       {/* <Login /> */}
-     <Signup />   {/* Uncomment to show signup instead */}
+     <Login />   {/* Uncomment to show signup instead */}
     </div>
   );
 }
